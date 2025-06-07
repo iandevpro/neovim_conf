@@ -9,6 +9,25 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
+    -- config for using codecompanion as a source for blink.cmp
+    -- https://github.com/Saghen/blink.cmp/discussions/1202#discussion-7947854
+      {
+        "saghen/blink.cmp",
+        lazy = false,
+        version = "*",
+        opts = {
+          keymap = {
+            preset = "enter",
+            ["<S-Tab>"] = { "select_prev", "fallback" },
+            ["<Tab>"] = { "select_next", "fallback" },
+          },
+          sources = {
+            default = { "codecompanion", "lsp", "path", "buffer" },
+            -- cmdline = {}, -- Disable sources for command-line mode
+            per_filetype = { codecompanion = { "codecompanion" } },
+          },
+        },
+      },
     },
     opts = {
       strategies = {
