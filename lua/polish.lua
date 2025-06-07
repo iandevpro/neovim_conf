@@ -1,5 +1,13 @@
 vim.api.nvim_set_keymap('n', '<Leader>ai', ':CodeCompanionChat<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<space>ae', ':CodeCompanion /explain<CR>', { noremap = true})
+vim.api.nvim_set_keymap('v', '<Leader>ae', ':CodeCompanion /explain<CR>', { noremap = true})
+
+vim.api.nvim_set_keymap('n', '<C-\\>', ':ToggleTerm direction=float<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>:ToggleTerm direction=float<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-\\>', '<Esc>:ToggleTerm direction=float<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<F7>', ':make<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<F7>', ':make<CR>', { noremap = true, silent = true })
+
 vim.cmd([[
   augroup qb64bas
     autocmd!
@@ -17,7 +25,7 @@ vim.cmd([[
 -- vim.cmd([[set efm=LINE\ %l:%m]])
 -- works vim.cmd([[set errorformat=LINE\ %l:%m]])
 -- vim.opt.errorformat={LINE %l:%m}
-if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- This will run last in the setup process.
 -- This is just pure lua so anything that doesn't
