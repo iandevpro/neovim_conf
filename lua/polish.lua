@@ -1,9 +1,14 @@
 vim.api.nvim_set_keymap('n', '<Leader>ai', ':CodeCompanionChat<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<Leader>ae', ':CodeCompanion /explain<CR>', { noremap = true})
 
-vim.api.nvim_set_keymap('n', '<C-\\>', ':ToggleTerm direction=float<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>:ToggleTerm direction=float<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<C-\\>', '<Esc>:ToggleTerm direction=float<CR>', { noremap = true, silent = true })
+-- When in terminal mode - hide it (toggle)
+vim.api.nvim_set_keymap('t', '<C-\\>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+-- normal mode
+vim.api.nvim_set_keymap('n', '<C-\\>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
+-- insert mode
+vim.api.nvim_set_keymap('i', '<C-\\>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
+-- visual mode
+vim.api.nvim_set_keymap('v', '<C-\\>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<F7>', ':make<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<F7>', ':make<CR>', { noremap = true, silent = true })
