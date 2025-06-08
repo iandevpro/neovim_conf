@@ -19,6 +19,23 @@ vim.cmd([[
     autocmd FileType qb64 set errorformat=LINE\ %l:%m|set makeprg=./mymake.sh
   augroup END
 ]])
+
+vim.cmd( [[
+
+    let g:clipboard = {
+      \   'name': 'WslClipboard',
+      \   'copy': {
+      \      '+': '/mnt/c/Windows/System32/clip.exe',
+      \      '*': '/mnt/c/Windows/System32/clip.exe',
+      \    },
+      \   'paste': {
+      \      '+': '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      \      '*': '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      \   },
+      \   'cache_enabled': 0,
+      \ }
+]])
+
 -- vim.cmd([[set efm=%ESyntax\ %m,%+C%.%#,LINE\ %l:]])
 -- captures "error" - vim.cmd([[set efm=%ESyntax\ %m,%+C%.%#,%-ZLINE\ %l:]])
 -- vim.cmd([[set efm=%+E%.%#,%CCaused\ by\ (or\ after):%.%#,LINE\ %l:%m]])
