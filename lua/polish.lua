@@ -36,6 +36,8 @@ vim.cmd( [[
       \ }
 ]])
 
+vim.cmd( [[ set listchars=tab:>\ ,trail:-,eol:$ ]] )
+
 -- vim.cmd([[set efm=%ESyntax\ %m,%+C%.%#,LINE\ %l:]])
 -- captures "error" - vim.cmd([[set efm=%ESyntax\ %m,%+C%.%#,%-ZLINE\ %l:]])
 -- vim.cmd([[set efm=%+E%.%#,%CCaused\ by\ (or\ after):%.%#,LINE\ %l:%m]])
